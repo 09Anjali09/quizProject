@@ -1,0 +1,400 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    color: rgb(58, 25, 58);
+    overflow: hidden;
+}
+.logo img{
+    width: 100px;
+    height: 50px;
+
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* border: 1px solid black; */
+    padding: 20px 10%;
+    /* background-color: plum; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.navbar a{
+    font-size: 20px;
+    color: darkblue;
+    text-decoration: none;
+    font-weight: bolder;
+    margin-left: 35px;
+}
+.navbar a:hover{
+    color: rgb(247, 245, 243);
+    background-color: black;
+    padding: 10px;
+}
+.main{
+    min-height: 100vh;
+    /* border: 1px solid black; */
+    background-image: url(back.jpg) ;
+    background-repeat: no-repeat;
+    background-position: fixed;
+    background-size: cover;
+    
+}
+.main.active{
+    filter: blur(15px);
+}
+.container{
+    display: flex;
+    height: 100vh;
+    width: 200%;
+}
+.home{
+    position: relative;
+    left: -50%;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-content{
+   max-width: 600px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+.home-content h1{
+    text-align: center;
+    font-size: 70px;
+   text-shadow: 0 0 10px rgb(30, 30, 112);
+}
+.home-content p{
+    font-size: 16px;
+    text-align: center;
+   text-shadow: 0 0 10px rgb(51, 152, 127);
+    margin-bottom: 30px;
+}
+.strt-btn{
+    width: 190px;
+    height: 50px;
+    background-color: cadetblue;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgb(83, 171, 198);
+    font-size: 18px;
+    color: ghostwhite;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: -5s;
+}
+.strt-btn:hover{
+    background-color: darkblue;
+    color: white;
+    border: none;
+}
+.popup-info{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 600px;
+    background-color: rgb(162, 227, 238);
+    border-radius: 6px;
+    padding: 20px 35px;
+    box-shadow: 2px 3px 5px 8px rgb(175, 175, 190);
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+.popup-info.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+
+}
+.popup-info h2{
+    font-size: 40px;
+    color: rgb(27, 61, 91);
+}
+.info{
+    display: inline-block;
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+    margin: 4px 0;
+}
+ .btn-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgb(48, 35, 35);
+    margin-top: 10px;
+    padding: 15px 0 7px;
+}
+.info-btn{
+    width: 130px;
+    height: 45px;
+   background-color: darkcyan;
+   border: 2px solid white;
+   outline: none;
+   border-radius: 6px;
+   text-align: center;
+   color: ghostwhite;
+   font-size: 12px;
+}
+.continue-btn{
+    padding-top: 10px;
+    text-decoration: none;
+   font-size: 16px;
+
+}
+.info-btn:nth-child(1){
+    background: transparent;
+    color: navy;
+    border: 1px solid navy;
+}
+.info-btn:nth-child(1):hover{
+    background-color: rgb(49, 65, 155);
+    color: ghostwhite;
+}
+.info-btn:nth-child(2):hover{
+    background-color: darkblue;
+    color: ghostwhite;
+}
+.quiz-section{
+    position: relative;
+    left: -50%;
+    /* left: 0; */
+  
+    width: 100%;
+    background-color: rgb(82, 38, 81);
+    color: ghostwhite;
+    transition: .8s ease-in-out;
+    transition-delay: .2s;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.quiz-section.active{
+    left: 0;
+}
+.quiz-box{
+    position: relative;
+    width: 500px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.9);
+}
+.quiz-box.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    transition: 1s ease;
+    transition-delay: 1s;
+}
+.quiz-box h1{
+    font-size: 30px;
+    text-align: center;
+    background: linear-gradient(45deg,transparent, rgb(52, 90, 107), transparent);
+    border-radius: 6px;
+}
+.quiz-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 2px solid wheat;
+    /* margin-bottom: 30px;  */
+    /* font-size: 20px; */
+}
+.quiz-header span{
+    font-size: 15px;
+    font-weight: 500;
+}
+.header-score{
+    background-color: rgb(37, 92, 94);
+    border-radius: 3px;
+    padding: 7px;
+}
+.question-text{
+    font-size: 28px;
+    font-weight: 600;
+}
+.option-list .option{
+    width: 100%;
+    padding: 10PX;
+    background: transparent;
+    border: 2px solid rgba(255,255,255, .2);
+    font-size: 12px;
+    border-radius: 3px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: .3s;
+
+}
+.option-list .option.correct{
+background-color: rgb(62, 17, 51);
+color: greenyellow;
+border-color: greenyellow;
+}
+
+.option-list .option.incorrect{
+    background-color: rgb(241, 244, 246);
+    color: rgb(149, 17, 25);
+    border-color: rgb(181, 20, 52);
+    }
+
+    .option-list .option.disable{
+        pointer-events: none;
+    }
+.option-list .option:hover{
+    background-color: rgba(255,255,255, .1);
+    border-color: rgba(255,255,255, .1);
+}
+.quiz-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid wheat;
+    padding-top: 20px;
+    margin-top: 10px;
+
+}
+.question-total{
+    font-size: 16px;
+    font-weight: 600;
+}
+.next-btn{
+    width: 100px;
+    height: 40px;
+    background-color: rgb(28, 51, 119);
+    color: rgb(235, 235, 241);
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    transition: .5s;
+    pointer-events: none;
+}
+.next-btn.active{
+    background-color: rgb(132, 123, 208);
+    color: rgb(19, 19, 66);
+    pointer-events: auto;
+
+}
+.next-btn:hover{
+    background-color: azure;
+    color: darkslategray;
+}
+.result-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 500px;
+    background: transparent;
+    border: 2px solid wheat;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+.result-box.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+
+}
+.result-box h2{
+    font-size: 29px;
+}
+.percentage-container{
+    width: 300px;
+    background-color: rgb(79, 54, 21);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 40px;
+    /* padding: 10px 10px 10px; */
+}
+.circular-progress{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background-color: darkgoldenrod;
+    background: conic-gradient(ghostwhite 3.6% , rgba(255,255,255, .1)0deg);
+    color: rgb(152, 136, 136);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 25px; */
+}
+.circular-progress::before{
+    content: '';
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    background-color: rgb(111, 93, 28);
+    border-radius: 50%;
+}
+.progress-value{
+    font-size: 30px;
+    font-weight: 600;
+    position: relative;
+}
+.score-text{
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.buttons{
+    display: flex;
+}
+.buttons button{
+    width: 130px;
+    height: 47px;
+    background-color: burlywood;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 1s;
+}
+.buttons button:nth-child(1):hover{
+    background-color: rgb(120, 122, 181);
+    border-color: rgb(21, 21, 43);
+}
+.buttons button:nth-child(2){
+    background-color: azure;
+    color: brown;
+}
+.buttons button:nth-child(2):hover{
+    background-color: blanchedalmond;
+    color: black;
+}
+
